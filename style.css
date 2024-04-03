@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+
+* {
+    font-family: "Hammersmith One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    transition: .2s ease-in-out;
+    cursor: none;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: none;
+    color: #fff;
+}
+
+.curzor-dot{
+    width: 5px;
+    height: 5px;
+    background-color: white;
+  }
+  .curzor-outline{
+    width: 30px;
+    height: 30px;
+    filter: opacity(40%);
+    background-color: white;
+    border: 2px solid rgb(197, 197, 197);
+    box-shadow: 0 0 15px  white;
+  }
+  .curzor-dot,
+  .curzor-outline{
+    position: fixed;
+    top: 0;
+    left:0;
+    transform:translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 50;
+    pointer-events: none;
+  }
+.anchors {
+    margin-left: 300px;
+}
+
+.logo {
+    font-size: 2.5rem;
+    margin-left: 100px;
+}
+
+.heads {
+    text-decoration: none;
+    margin: 30px;
+    padding: 3px;
+    border-radius: 25%;
+    color: white;
+}
+
+.heads:hover,
+.active {
+    background-color: #fe4f00;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+}
+
+.toggle-btn {
+    margin-right: 10px;
+    font-weight: bold;
+    display: none;
+}
+
+.dropdown-menu {
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    width: 300px;
+    height: 0;
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown-menu.open {
+    height: 240px;
+}
+
+.dropdown-menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 1075px) {
+    .anchors {
+        display: none;
+    }
+
+    .toggle-btn {
+        display: block !important;
+    }
+
+    .logo {
+        margin-left: 10px;
+    }
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #000;
+    color: #fff;
+}
+
+section:nth-child(odd) {
+    background-color: #565656;
+
+}
