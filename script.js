@@ -1,8 +1,26 @@
 const toggleBtn = document.getElementById('toggleBtn');
 const toggleBtndrop = document.querySelector('.toggle-btn i');
 const dropdown = document.querySelector('.dropdown_menu');
-let sections = document.querySelectorAll('section');
-let navlinks = document.querySelectorAll('.heads');
+const hiddenElements = document.querySelectorAll('.hidden');
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.heads');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            entry.target.classList.remove('hidden');
+        } else {
+            entry.target.classList.remove('show');
+            entry.target.classList.add('hidden');
+        }
+    });
+});
+
+hiddenElements.forEach(element => {
+    observer.observe(element);
+});
+
 
 window.onscroll = () => {
     sections.forEach(sec => {
